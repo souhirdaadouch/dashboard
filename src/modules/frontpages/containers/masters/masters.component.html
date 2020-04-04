@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Mise à jour Calendriers</h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form #formulaire="ngForm">
+
+            <label for="idmas">ID</label>
+            <input required id="idmas" type="number" ngModel name="idmas" class="form-control">
+
+            <label for="description">Description</label>
+            <input required id="description" type="text" ngModel name="description" class="form-control">
+
+            <label for="nbrpatrtietr">Nombre Participants étrangers</label>
+            <input required id="nbrpatrtietr" type="number" ngModel name="nbrpatrtietr" class="form-control">
+
+            <label for="nbrtotal">Nombre Participants Global</label>
+            <input required id="nbrtotal" type="number" ngModel name="nbrtotal" class="form-control">
+
+            <button [disabled]="formulaire.invalid" (click)="addmasters(formulaire)" class="btn btn-primary">Envoyer</button>
+
+        </form>
+    </div>
+</div>
+

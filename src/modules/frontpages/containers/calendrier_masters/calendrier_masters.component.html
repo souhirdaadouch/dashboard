@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Mise à jour Calendriers</h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form #formulaire="ngForm">
+
+            <label for="idcompetitionmas">ID</label>
+            <input required id="idcompetitionmas" type="text" ngModel name="idcompetitionmas" class="form-control">
+
+            <label for="nom">Nom Compétition</label>
+            <input required id="nom" type="text" ngModel name="nom" class="form-control">
+
+            <label for="organisateur">Organisateur</label>
+            <input required id="organisateur" type="date" ngModel name="organisateur" class="form-control">
+
+            <label for="lieu">Lieu</label>
+            <input required id="lieu" type="text" ngModel name="lieu" class="form-control">
+
+
+            <label for="date">Date</label>
+            <input required id="date" type="date" ngModel name="date" class="form-control">
+
+            <button [disabled]="formulaire.invalid" (click)="addcompetitionmas(formulaire)" class="btn btn-primary">Envoyer</button>
+
+        </form>
+    </div>
+</div>
+

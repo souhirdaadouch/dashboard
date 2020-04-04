@@ -1,0 +1,30 @@
+idcompetition: number;
+nom: string;
+date: Date;
+lieu: string;
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Mise à jour Calendriers</h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form #formulaire="ngForm">
+
+            <label for="idcompetition">ID</label>
+            <input required id="idcompetition" type="number" ngModel name="idcompetition" class="form-control">
+
+            <label for="nom">Compétition</label>
+            <input required id="nom" type="text" ngModel name="nom" class="form-control">
+
+            <label for="lieu">Lieu</label>
+            <input required id="lieu" type="number" ngModel name="lieu" class="form-control">
+
+            <label for="date">Date</label>
+            <input required id="date" type="date" ngModel name="date" class="form-control">
+
+            <button [disabled]="formulaire.invalid" (click)="addresultat(formulaire)" class="btn btn-primary">Envoyer</button>
+
+        </form>
+    </div>
+</div>
+
