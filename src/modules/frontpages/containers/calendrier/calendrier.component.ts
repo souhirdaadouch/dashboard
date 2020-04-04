@@ -12,7 +12,7 @@ export class CalendrierComponent implements OnInit {
 
     ngOnInit() {}
 
-/*    errorMessage = '';
+    /*    errorMessage = '';
     constructor(private calendrierService1: CalendrierService, private router: Router) {}
     addcompetition(formulaire: NgForm) {
         /*this.calendrierService1.addcalendrier(formulaire.value).subscribe(

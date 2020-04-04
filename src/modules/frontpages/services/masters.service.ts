@@ -2,26 +2,26 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { masters } from '../../../models/masters.model';
+import { masters } from '../models/masters.model';
 
 @Injectable({
     providedIn: 'root',
 })
 export class MastersService {
-    /*private act: masters [];
+    /*private mas: masters [];
     link = 'http://localhost:3000/api/masters';
     constructor(
         private http: HttpClient
     ) {
-        this.act = [
-        new masters(1, 'souhir', ''),
+        this.mas = [
+        new masters(1, 55, 45, ''),
         ];
     }
     get master(): Observable<masters[]> {
        return this.http.get<masters []>(this.link);
     }
     getFakemaster() {
-        return this.masters;
+        return this.mas;
     }
     getmasterById(id: number): Observable<masters> {
         return this.http.get<masters>( this.link + `/${id}`);

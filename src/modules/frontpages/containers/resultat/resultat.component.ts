@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ResultatService } from '@modules/frontpages/containers/competition/services';
+import { ResultatService } from '@modules/frontpages/services';
 
 @Component({
     selector: 'sb-resultat',

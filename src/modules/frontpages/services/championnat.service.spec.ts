@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { ChampionnatService } from '@modules/frontpages/containers/competition/services/championnat.service';
+import { ChampionnatService } from '@modules/frontpages/services/championnat.service';
 
 describe('ChampionnatService', () => {
     beforeEach(() => TestBed.configureTestingModule({}));

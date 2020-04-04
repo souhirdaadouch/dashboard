@@ -1,0 +1,147 @@
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Ajout Athléte</h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <div class="container">
+            <form #formulaire="ngForm">
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="id">Id</label>
+                        <input required id="id" type="number" ngModel name="id" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="nom">Nom</label>
+                        <input required id="nom" type="text" ngModel name="nom" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="prenom">Prénom</label>
+                        <input required id="prenom" type="text" ngModel name="prenom" class="form-control">
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Sexe</label>
+                        <input type="radio" name="sexe" value="H" checked> Homme
+                        <input type="radio" name="sexe" value="F"> Femme
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="ddn">Date de naissance</label>
+                        <input required id="ddn" type="date" ngModel name="ddn" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lieu">Lieu</label>
+                        <input required id="lieu" type="text" ngModel name="lieu" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="club">Club</label>
+                        <input required id="club" type="text" ngModel name="club" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="clubetranger">Club à l'étranger </label>
+                        <input required id="clubetranger" type="text" ngModel name="clubetranger" class="form-control">
+                    </div>
+                </div>
+                <label>Disciplines</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input required id="discipline1" type="text" ngModel name="discipline1" value="discipline1"
+                               class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <input required id="discipline2" type="text" ngModel name="discipline2" value="discipline2"
+                               class="form-control">
+                    </div>
+                </div>
+                <label>Meilleur Performances</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input required id="Meilleurperfo1" type="text" ngModel name="Meilleurperfo1"
+                               value="Meilleurperfo1" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <input required id="Meilleurperfo2" type="text" ngModel name="Meilleurperfo2"
+                               value="Meilleurperfo2" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="etablissement">Etablissement</label>
+                        <input required id="etablissement" type="text" ngModel name="etablissement"
+                               class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="classe">Classe</label>
+                        <input required id="classe" type="text" ngModel name="classe" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="encadreurtech">Encadreur Technique</label>
+                        <input required id="encadreurtech" type="text" ngModel name="encadreurtech"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="Npasseport">N° passeport</label>
+                        <input required id="Npasseport" type="text" ngModel name="Npasseport" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validite">Validité</label>
+                        <input required id="validite" type="text" ngModel name="validite" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="telephone">Téléphone</label>
+                        <input required id="telephone" type="text" ngModel name="telephone" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="adremail">E-mail</label>
+                        <input required id="adremail" type="text" ngModel name="adremail" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="adresse">Adresse</label>
+                        <input required id="adresse" type="text" ngModel name="adresse" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="pointure">Pointure</label>
+                        <input required id="pointure" type="text" ngModel name="pointure" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="PathPerformanceCopiePDF">Performance</label>
+                        <input required id="PathPerformanceCopiePDF" type="file" ngModel name="PathPerformanceCopiePDF"
+                               class="form-control">
+                    </div>
+                </div>
+                <button [disabled]="formulaire.invalid" (click)="addathlete(formulaire)" class="btn btn-primary">
+                    Envoyer
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

@@ -2,26 +2,26 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { resultat } from '../../../models/resultat.model';
+import { resultat } from '../models/resultat.model';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ResultatService {
-    /*private act: resultat [];
+    /*private res: resultat [];
     link = 'http://localhost:3000/api/resultat';
     constructor(
         private http: HttpClient
     ) {
-        this.act = [
+        this.res = [
         new resultat(1, 'souhir', 22_06_09,''),
         ];
     }
-    get resultat(): Observable<resultat[]> {
+    getresultat(): Observable<resultat[]> {
        return this.http.get<resultat []>(this.link);
     }
     getFakeresultat() {
-        return this.resultat;
+        return this.res;
     }
     getresultatById(id: number): Observable<resultat> {
         return this.http.get<resultat>( this.link + `/${id}`);

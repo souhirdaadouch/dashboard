@@ -2,26 +2,26 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { championnat } from '../../../models/championnat.model';
+import { championnat } from '../models/championnat.model';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ChampionnatService {
-    /*private act: championnat [];
+    /*private champ: championnat [];
     link = 'http://localhost:3000/api/championnat';
     constructor(
         private http: HttpClient
     ) {
-        this.act = [
+        this.champ = [
         new championnat(1, 'souhir', '', '', '', '','',22-06-96),
         ];
     }
-    get championnat(): Observable<championnat[]> {
+    getchampionnat(): Observable<championnat[]> {
        return this.http.get<championnat []>(this.link);
     }
     getFakechampionnat() {
-        return this.championnats;
+        return this.champ;
     }
     getchampionnatById(id: number): Observable<championnat> {
         return this.http.get<championnat>( this.link + `/${id}`);

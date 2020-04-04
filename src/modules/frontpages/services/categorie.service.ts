@@ -2,26 +2,26 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { categorie } from '../../../models/categorie.model';
+import { categorie } from '../models/categorie.model';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CategorieService {
-    /*private act: categorie [];
+    /*private cat: categorie [];
     link = 'http://localhost:3000/api/categorie';
     constructor(
         private http: HttpClient
     ) {
-        this.act = [
+        this.cat = [
         new categorie(1, 'souhir', '', 22-06-96),
         ];
     }
-    get categories(): Observable<categorie[]> {
+    getcategorie(): Observable<categorie[]> {
        return this.http.get<categorie []>(this.link);
     }
-    getFakecategories() {
-        return this.categories;
+    getFakecategorie() {
+        return this.cat;
     }
     getcategorieById(id: number): Observable<categorie> {
         return this.http.get<categorie>( this.link + `/${id}`);

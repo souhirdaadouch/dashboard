@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Mise à jour Formations</h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form #formulaire="ngForm">
+
+            <label for="idformation">ID</label>
+            <input required id="idformation" type="number" ngModel name="idformation" class="form-control">
+
+            <label for="activite">Activité</label>
+            <input required id="activite" type="text" ngModel name="activite" class="form-control">
+
+            <label for="eventDate">Nature d'activité</label>
+            <input required id="eventDate" type="text" ngModel name="eventDate" class="form-control">
+
+            <label for="periode">Periode</label>
+            <input required id="periode" type="text" ngModel name="periode" class="form-control">
+
+            <label for="lieu">Lieu</label>
+            <input required id="lieu" type="text" ngModel name="lieu" class="form-control">
+
+            <label for="organisme">Organisme</label>
+            <input required id="organisme" type="text" ngModel name="organisme" class="form-control">
+
+            <label for="nbrparticipants">Nombres participants</label>
+            <input required id="nbrparticipants" type="text" ngModel name="nbrparticipants" class="form-control">
+
+            <label for="pathcomformation">Communiquée de fomartion</label>
+            <input required id="pathcomformation" ngModel name="pathcomformation" class="form-control"type="file" (change)="onFileChange($event)" />
+
+            <button [disabled]="formulaire.invalid" (click)="addformation(formulaire)" class="btn btn-primary">Envoyer</button>
+
+        </form>
+    </div>
+</div>
+
+

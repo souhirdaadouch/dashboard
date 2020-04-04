@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { calendriercourseR } from '../../../models/calendriercourseR.model';
+import { calendriercourseR } from '../models/calendriercourseR.model';
 
 describe('calendriercourseRService', () => {
     beforeEach(() => TestBed.configureTestingModule({}));

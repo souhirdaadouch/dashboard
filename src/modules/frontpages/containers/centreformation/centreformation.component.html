@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Mise à jour Centres de Formation </h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form #formulaire="ngForm">
+
+            <label for="idcentre">ID</label>
+            <input required id="idcentre" type="number" ngModel name="idcentre" class="form-control">
+
+            <label for="name">Nom</label>
+            <input required id="name" type="text" ngModel name="name" class="form-control">
+
+            <label for="athlete">Athlete</label>
+            <input required id="athlete" type="text" ngModel name="athlete" class="form-control">
+
+            <label for="category">Categorie</label>
+            <input required id="category" type="text" ngModel name="category" class="form-control">
+
+            <label for="specialty">Specialté </label>
+            <input required id="specialty" type="text" ngModel name="specialty" class="form-control">
+
+            <label for="club">Club</label>
+            <input required id="club" type="text" ngModel name="club" class="form-control">
+
+            <label for="directeur">Directeur</label>
+            <input required id="directeur" type="text" ngModel name="directeur" class="form-control">
+
+            <label for="tel">Tel</label>
+            <input required id="tel" type="text" ngModel name="tel" class="form-control">
+
+            <button [disabled]="formulaire.invalid" (click)="addclub(formulaire)" class="btn btn-primary">Envoyer</button>
+
+        </form>
+    </div>
+</div>
+
+

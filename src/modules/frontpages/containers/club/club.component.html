@@ -1,1 +1,42 @@
-<p>club works!</p>
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Mise à jour Club</h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form #formulaire="ngForm">
+
+            <label for="idclub">ID</label>
+            <input required id="idclub" type="number" ngModel name="idclub" class="form-control">
+
+            <label for="name">Nom</label>
+            <input required id="name" type="text" ngModel name="name" class="form-control">
+
+            <label for="gouvernorat">Gouvernorat</label>
+            <input required id="gouvernorat" type="text" ngModel name="gouvernorat" class="form-control">
+
+            <label for="presidentsecretaireGenerale">President_secretaireGenerale</label>
+            <input required id="presidentsecretaireGenerale" type="text" ngModel name="presidentsecretaireGenerale" class="form-control">
+
+            <label for="mobilePresidentsecretaireGenerale">Tel </label>
+            <input required id="mobilePresidentsecretaireGenerale" type="text" ngModel name="mobilePresidentsecretaireGenerale" class="form-control">
+
+            <label for="mobileClub">Tel Club</label>
+            <input required id="mobileClub" type="text" ngModel name="mobileClub" class="form-control">
+
+            <label for="faxClub">Fax Club</label>
+            <input required id="faxClub" type="text" ngModel name="faxClub" class="form-control">
+
+            <label for="adresse">Adresse</label>
+            <input required id="adresse" type="date" ngModel name="adresse" class="form-control">
+
+            <label for="img">Logo</label>
+            <input required id="img" type="file" ngModel name="img" class="form-control">
+
+            <button [disabled]="formulaire.invalid" (click)="addclub(formulaire)" class="btn btn-primary">Envoyer</button>
+
+        </form>
+    </div>
+</div>
+
+

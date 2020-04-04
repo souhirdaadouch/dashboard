@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="card">
+    <div class="card-body -align-center">
+        <h4 class="card-header text-center font-weight-bold text-uppercase py-4">Upload Documents Administratif</h4>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form #formulaire="ngForm">
+
+            <label for="iddoc">ID</label>
+            <input required id="iddoc" type="number" ngModel name="iddoc" class="form-control">
+
+            <label for="typedoc">Type Document</label>
+            <input required id="typedoc" type="text" ngModel name="typedoc" class="form-control">
+
+            <label for="pathdoc">Path Document</label>
+            <input required id="pathdoc" type="text" ngModel name="pathdoc" class="form-control">
+
+            <input required id="doc" ngModel name="doc" class="form-control"type="file" (change)="onFileChange($event)" />
+
+            <button [disabled]="formulaire.invalid" (click)="addDocument(formulaire)" class="btn btn-primary">Envoyer</button>
+
+        </form>
+    </div>
+</div>
+
+

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CompetitionsService } from '@modules/frontpages/containers/competition/services';
+import { CompetitionsService } from '@modules/frontpages/services';
 
 @Component({
     selector: 'sb-listecompetition',

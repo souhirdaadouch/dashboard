@@ -1,6 +1,6 @@
 import { DecimalPipe } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
-import { CompetitionsService } from '@modules/frontpages/containers/competition/services/competitions.service';
+import { CompetitionsService } from '@modules/frontpages/services/competitions.service';
 
 describe('CompetitionsService', () => {
     let competitionsService: CompetitionsService;

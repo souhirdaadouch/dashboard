@@ -2,26 +2,26 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { calendriercourseR } from '../../../models/calendriercourseR.model';
+import { calendriercourseR } from '../models/calendriercourseR.model';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CalendriercourseRService {
-    /*private act: calendriercourseR [];
+    /*private course: calendriercourseR [];
     link = 'http://localhost:3000/api/calendriercourseR';
     constructor(
         private http: HttpClient
     ) {
-        this.act = [
-        new calendriercourseR(1, 'souhir', '', '', '', '','',22-06-96),
+        this.course = [
+        new calendriercourseR(1, 'souhir', '', '', '', '',22-06-96),
         ];
     }
-    get calendriercourseR(): Observable<calendriercourseR[]> {
+    getcalendriercourseR(): Observable<calendriercourseR[]> {
        return this.http.get<calendriercourseR []>(this.link);
     }
     getFakecalendriercourseR() {
-        return this.calendriercourseR;
+        return this.course;
     }
     getcalendriercourseRById(id: number): Observable<calendriercourseR> {
         return this.http.get<calendriercourseR>( this.link + `/${id}`);

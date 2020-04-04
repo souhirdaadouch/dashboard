@@ -8,20 +8,20 @@ import { calendriermasters} from '@modules/frontpages/models/calendriermasters.m
     providedIn: 'root',
 })
 export class CalendriermasService {
-    /*private act: calendriermasters [];
+    /*private mas: calendriermasters [];
     link = 'http://localhost:3000/api/calendriermas';
     constructor(
         private http: HttpClient
     ) {
-        this.act = [
+        this.mas = [
         new calendriermasters(1, 'souhir', '', '', 22-06-96),
         ];
     }
-    get calendriermass(): Observable<calendriermasters[]> {
+    getcalendriermas(): Observable<calendriermasters[]> {
        return this.http.get<calendriermasters []>(this.link);
     }
     getFakecalendriermass() {
-        return this.calendriermass;
+        return this.mas;
     }
     getcalendriermasById(id: number): Observable<calendriermasters> {
         return this.http.get<calendriermasters>( this.link + `/${id}`);
