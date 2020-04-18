@@ -4,20 +4,20 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="docForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="iddoc">ID</label>
-            <input required id="iddoc" type="number" ngModel name="iddoc" class="form-control">
+            <input required id="iddoc" type="number" formControlName="iddoc" class="form-control">
 
             <label for="typedoc">Type Document</label>
-            <input required id="typedoc" type="text" ngModel name="typedoc" class="form-control">
+            <input required id="typedoc" type="text" formControlName="typedoc" class="form-control">
 
             <label for="pathdoc">Path Document</label>
-            <input required id="pathdoc" type="text" ngModel name="pathdoc" class="form-control">
+            <input required id="pathdoc" type="text" formControlName="pathdoc" class="form-control">
 
-            <input required id="doc" ngModel name="doc" class="form-control"type="file" (change)="onFileChange($event)" />
+            <input required id="doc" formControlName="doc" class="form-control"type="file" (change)="onFileChange($event)" />
 
-            <button [disabled]="formulaire.invalid" (click)="addDocument(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!docForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

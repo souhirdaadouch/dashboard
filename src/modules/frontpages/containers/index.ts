@@ -13,8 +13,8 @@ import { EngagementLicenceComponent } from '@modules/frontpages/containers/engag
 import { FormationsComponent } from '@modules/frontpages/containers/formations/formations.component';
 import { HomeComponent } from '@modules/frontpages/containers/home/home.component';
 import { LigueComponent } from '@modules/frontpages/containers/ligue/ligue.component';
-import { listechampionnatComponent } from '@modules/frontpages/containers/liste_championnat/liste_championnat.component';
-import { listecompetitionComponent } from '@modules/frontpages/containers/liste_competition/liste_competition.component';
+import { ListechampionnatComponent } from '@modules/frontpages/containers/liste_championnat/liste_championnat.component';
+import { ListecompetitionComponent } from '@modules/frontpages/containers/liste_competition/liste_competition.component';
 import { MastersComponent } from '@modules/frontpages/containers/masters/masters.component';
 import { PresentationComponent } from '@modules/frontpages/containers/presentation-fta/presentation.component';
 import { RecordsComponent } from '@modules/frontpages/containers/records/records.component';
@@ -38,8 +38,8 @@ export const containers = [
     CalendriermastersComponent,
     CategorieComponent,
     CourseRouteComponent,
-    listechampionnatComponent,
-    listecompetitionComponent,
+    ListechampionnatComponent,
+    ListecompetitionComponent,
     MastersComponent,
     RecordsComponent,
     ResultatComponent,

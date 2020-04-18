@@ -4,18 +4,18 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="athlesanteForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="description">Description</label>
-            <input required id="description" type="text" ngModel name="description" class="form-control">
+            <input required id="description" type="text" formControlName="description" class="form-control">
 
             <label for="programme">Programme</label>
-            <input required id="programme" type="text" ngModel name="programme" class="form-control">
+            <input required id="programme" type="text" formControlName="programme" class="form-control">
 
             <label for="information">Relation Sport-Santé</label>
-            <input required id="information" type="text" ngModel name="information" class="form-control">
+            <input required id="information" type="text" formControlName="information" class="form-control">
 
-            <button [disabled]="formulaire.invalid" (click)="addAthlesante(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!athlesanteForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

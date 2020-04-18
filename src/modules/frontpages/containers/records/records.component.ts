@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { record } from '@modules/frontpages/models';
 import { RecordService } from '@modules/frontpages/services';
 
 @Component({
@@ -9,14 +10,52 @@ import { RecordService } from '@modules/frontpages/services';
     styleUrls: ['./records.component.scss'],
 })
 export class RecordsComponent implements OnInit {
-    constructor() {}
+    errorMessage = '';
+    // @ts-ignore
+    recordForm: FormGroup;
+    // @ts-ignore
+    rec = new record();
+    json: any;
+    constructor(private recordService1: RecordService, private router: Router) {}
 
-    ngOnInit() {}
-
-    /* errorMessage = '';
-     constructor(private recordService1: RecordService, private router: Router) {}
+    ngOnInit() {
+        this.recordForm = new FormGroup({
+            idcompetition: new FormControl(null, Validators.required),
+            categorie: new FormControl(null, Validators.required),
+            Epr: new FormControl(null, Validators.required),
+            Performance: new FormControl(null, Validators.required),
+            nomprenom: new FormControl(null, Validators.required),
+            age: new FormControl(null, Validators.required),
+            date: new FormControl(null, Validators.required),
+            lieu: new FormControl(null, Validators.required),
+        });
+        this.recordForm.setValue({
+            lieu: this.rec.lieu,
+            date: this.rec.date,
+            age: this.rec.age,
+            nomprenom: this.rec.nomprenom,
+            Performance: this.rec.Performance,
+            Epr: this.rec.Epr,
+            categorie: this.rec.categorie,
+            idcompetition: this.rec.idcompetition,
+        });
+    }
+    onSubmit() {
+        this.json = JSON.stringify(this.recordForm.value);
+        console.log(this.json);
+        // this.http.put('http://localhost:3000/api/athlete/' +  this.athle.id, this.json, {
+        //     headers: new HttpHeaders({
+        //         'Content-Type': 'application/json'
+        //     })
+        // })
+        //     .subscribe(responseData => {
+        //         console.log(responseData);
+        //     });
+        this.recordForm.reset();
+    }
+    /*
      addrecord(formulaire: NgForm) {
-        /*this.recordService1.addrecord(formulaire.value).subscribe(
+        this.recordService1.addrecord(formulaire.value).subscribe(
             reponse => {
                 const link = ['ath'];
                 this.router.navigate(link);

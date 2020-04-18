@@ -4,18 +4,18 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="compForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="idcompetition">ID</label>
-            <input required id="idcompetition" type="number" ngModel name="idcompetition" class="form-control">
+            <input required id="idcompetition" type="number" formControlName="idcompetition" class="form-control">
 
             <label for="nom">Nom Compétition</label>
-            <input required id="nom" type="text" ngModel name="nom" class="form-control">
+            <input required id="nom" type="text" formControlName="nom" class="form-control">
 
             <label for="organisateur">Organisateur</label>
-            <input required id="organisateur" type="date" ngModel name="organisateur" class="form-control">
+            <input required id="organisateur" type="date" formControlName="organisateur" class="form-control">
 
-            <button [disabled]="formulaire.invalid" (click)="addcompetition(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!compForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

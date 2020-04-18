@@ -117,7 +117,7 @@ export const ROUTES: Routes = [
     {
         path: 'liste_competition',
         canActivate: [],
-        component: frontpagesContainers.listecompetitionComponent,
+        component: frontpagesContainers.ListecompetitionComponent,
         data: {
             title: 'home - SB Admin Angular',
         } as SBRouteData,
@@ -125,7 +125,7 @@ export const ROUTES: Routes = [
     {
         path: 'liste_championnat',
         canActivate: [],
-        component: frontpagesContainers.listechampionnatComponent,
+        component: frontpagesContainers.ListechampionnatComponent,
         data: {
             title: 'FTA - SB Admin Angular',
         } as SBRouteData,

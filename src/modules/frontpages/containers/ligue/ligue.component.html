@@ -4,27 +4,27 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="ligueForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="idligue">ID</label>
-            <input required id="idligue" type="number" ngModel name="idligue" class="form-control">
+            <input required id="idligue" type="number" formControlName="idligue" class="form-control">
 
             <label for="nomligue">Nom Ligue</label>
-            <input required id="nomligue" type="text" ngModel name="nomligue" class="form-control">
+            <input required id="nomligue" type="text" formControlName="nomligue" class="form-control">
 
             <label for="fax">Fax</label>
-            <input required id="fax" type="number" ngModel name="fax" class="form-control">
+            <input required id="fax" type="number" formControlName="fax" class="form-control">
 
             <label for="email">E-mail</label>
-            <input required id="email" type="text" ngModel name="email" class="form-control">
+            <input required id="email" type="text" formControlName="email" class="form-control">
 
             <label for="fb">Facebook</label>
-            <input required id="fb" type="text" ngModel name="fb" class="form-control">
+            <input required id="fb" type="text" formControlName="fb" class="form-control">
 
             <label for="tel">Tel</label>
-            <input required id="tel" type="number" ngModel name="tel" class="form-control">
+            <input required id="tel" type="number" formControlName="tel" class="form-control">
 
-            <button [disabled]="formulaire.invalid" (click)="addLigue(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!ligueForm.valid"class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

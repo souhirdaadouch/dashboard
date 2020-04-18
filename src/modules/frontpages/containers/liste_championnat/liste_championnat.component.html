@@ -4,33 +4,33 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="champForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="idchampionnat">ID</label>
-            <input required id="idchampionnat" type="text" ngModel name="idchampionnat" class="form-control">
+            <input required id="idchampionnat" type="text" formControlName="idchampionnat" class="form-control">
 
             <label for="manifestation">Manifestation</label>
-            <input required id="manifestation" type="text" ngModel name="manifestation" class="form-control">
+            <input required id="manifestation" type="text" formControlName="manifestation" class="form-control">
 
             <label for="organisateur">Organisateur</label>
-            <input required id="organisateur" type="date" ngModel name="organisateur" class="form-control">
+            <input required id="organisateur" type="date" formControlName="organisateur" class="form-control">
 
             <label for="lieu">Lieu</label>
-            <input required id="lieu" type="text" ngModel name="lieu" class="form-control">
+            <input required id="lieu" type="text" formControlName="lieu" class="form-control">
 
             <label for="niveau">Niveau</label>
-            <input required id="niveau" type="text" ngModel name="niveau" class="form-control">
+            <input required id="niveau" type="text" formControlName="niveau" class="form-control">
 
             <label for="categorie">Categorie</label>
-            <input required id="categorie" type="text" ngModel name="categorie" class="form-control">
+            <input required id="categorie" type="text" formControlName="categorie" class="form-control">
 
             <label for="type">Type</label>
-            <input required id="type" type="text" ngModel name="type" class="form-control">
+            <input required id="type" type="text" formControlName="type" class="form-control">
 
             <label for="date">Date</label>
-            <input required id="date" type="date" ngModel name="date" class="form-control">
+            <input required id="date" type="date" formControlName="date" class="form-control">
 
-            <button [disabled]="formulaire.invalid" (click)="addchampionnat(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!champForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

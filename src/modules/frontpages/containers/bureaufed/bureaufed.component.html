@@ -4,27 +4,27 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="bureauFedForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="cin">CIN</label>
-            <input required id="cin" type="number" ngModel name="cin" class="form-control">
+            <input required id="cin" type="number" formControlName="cin" class="form-control">
 
             <label for="nom">Nom</label>
-            <input required id="nom" type="text" ngModel name="nom" class="form-control">
+            <input required id="nom" type="text" formControlName="nom" class="form-control">
 
             <label for="poste">Poste</label>
-            <input required id="poste" type="text" ngModel name="poste" class="form-control">
+            <input required id="poste" type="text" formControlName="poste" class="form-control">
 
             <label for="email">E-mail</label>
-            <input required id="email" type="text" ngModel name="email" class="form-control">
+            <input required id="email" type="text" formControlName="email" class="form-control">
 
             <label for="tel">Tel </label>
-            <input required id="tel" type="text" ngModel name="tel" class="form-control">
+            <input required id="tel" type="text" formControlName="tel" class="form-control">
 
             <label for="ddn">Date de naissance</label>
-            <input required id="ddn" type="date" ngModel name="ddn" class="form-control">
+            <input required id="ddn" type="date" formControlName="ddn" class="form-control">
 
-            <button [disabled]="formulaire.invalid" (click)="addmembre(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!bureauFedForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

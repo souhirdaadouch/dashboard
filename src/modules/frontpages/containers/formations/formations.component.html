@@ -4,33 +4,33 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="formationForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="idformation">ID</label>
-            <input required id="idformation" type="number" ngModel name="idformation" class="form-control">
+            <input required id="idformation" type="number" formControlName="idformation" class="form-control">
 
             <label for="activite">Activité</label>
-            <input required id="activite" type="text" ngModel name="activite" class="form-control">
+            <input required id="activite" type="text" formControlName="activite" class="form-control">
 
             <label for="eventDate">Nature d'activité</label>
-            <input required id="eventDate" type="text" ngModel name="eventDate" class="form-control">
+            <input required id="eventDate" type="text" formControlName="eventDate" class="form-control">
 
             <label for="periode">Periode</label>
-            <input required id="periode" type="text" ngModel name="periode" class="form-control">
+            <input required id="periode" type="text" formControlName="periode" class="form-control">
 
             <label for="lieu">Lieu</label>
-            <input required id="lieu" type="text" ngModel name="lieu" class="form-control">
+            <input required id="lieu" type="text" formControlName="lieu" class="form-control">
 
             <label for="organisme">Organisme</label>
-            <input required id="organisme" type="text" ngModel name="organisme" class="form-control">
+            <input required id="organisme" type="text" formControlName="organisme" class="form-control">
 
             <label for="nbrparticipants">Nombres participants</label>
-            <input required id="nbrparticipants" type="text" ngModel name="nbrparticipants" class="form-control">
+            <input required id="nbrparticipants" type="text" formControlName="nbrparticipants" class="form-control">
 
             <label for="pathcomformation">Communiquée de fomartion</label>
-            <input required id="pathcomformation" ngModel name="pathcomformation" class="form-control"type="file" (change)="onFileChange($event)" />
+            <input required id="pathcomformation" formControlName="pathcomformation" class="form-control"type="file" (change)="onFileChange($event)" />
 
-            <button [disabled]="formulaire.invalid" (click)="addformation(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!formationForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

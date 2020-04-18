@@ -4,27 +4,27 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="presentationForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="idpresentation">ID</label>
-            <input required id="idpresentation" type="number" ngModel name="idpresentation" class="form-control">
+            <input required id="idpresentation" type="number" formControlName="idpresentation" class="form-control">
 
             <label for="description">Description</label>
-            <input required id="description" type="text" ngModel name="description" class="form-control">
+            <input required id="description" type="text" formControlName="description" class="form-control">
 
             <label for="president">Président</label>
-            <input required id="president" type="text" ngModel name="president" class="form-control">
+            <input required id="president" type="text" formControlName="president" class="form-control">
 
             <label for="nbrligue">Nombre ligues</label>
-            <input required id="nbrligue" type="number" ngModel name="nbrligue" class="form-control">
+            <input required id="nbrligue" type="number" formControlName="nbrligue" class="form-control">
 
             <label for="nbrclub">Nombre clubs</label>
-            <input required id="nbrclub" type="number" ngModel name="nbrclub" class="form-control">
+            <input required id="nbrclub" type="number" formControlName="nbrclub" class="form-control">
 
             <label for="nbrlic">Nombre licenciés</label>
-            <input required id="nbrlic" type="number" ngModel name="nbrlic" class="form-control">
+            <input required id="nbrlic" type="number" formControlName="nbrlic" class="form-control">
 
-            <button [disabled]="formulaire.invalid" (click)="addpresentation(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!presentationForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

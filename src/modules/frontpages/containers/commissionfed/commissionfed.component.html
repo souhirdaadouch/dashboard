@@ -4,21 +4,21 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{errorMessage}}
         </div>
-        <form #formulaire="ngForm">
+        <form [formGroup]="commissionForm" class="form-theme" (ngSubmit)="onSubmit()">
 
             <label for="idmembre">ID</label>
-            <input required id="idmembre" type="number" ngModel name="idmembre" class="form-control">
+            <input required id="idmembre" type="number" formControlName="idmembre" class="form-control">
 
             <label for="nom">Nom</label>
-            <input required id="nom" type="text" ngModel name="nom" class="form-control">
+            <input required id="nom" type="text" formControlName="nom" class="form-control">
 
             <label for="president">Président</label>
-            <input required id="president" type="text" ngModel name="president" class="form-control">
+            <input required id="president" type="text" formControlName="president" class="form-control">
 
             <label for="email">E-mail</label>
-            <input required id="email" type="text" ngModel name="email" class="form-control">
+            <input required id="email" type="text" formControlName="email" class="form-control">
 
-            <button [disabled]="formulaire.invalid" (click)="addmembre(formulaire)" class="btn btn-primary">Envoyer</button>
+            <button [disabled]="!commissionForm.valid" class="btn btn-primary">Envoyer</button>
 
         </form>
     </div>

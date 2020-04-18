@@ -1,7 +1,7 @@
 export class actualite {
     eventId: number;
     eventTitle: string;
-    eventDate: Date;
+    eventDate: number;
     eventComments: string;
     eventImgPath: string;
     eventDescrip: string;
